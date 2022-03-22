@@ -34,7 +34,7 @@ const ImageCarousel = () => {
       <NavButtonWrap>
         {
           images.map((_, index) => (
-            <NavButton active={imgIndex === index ? true : false} onClick={() => setImgIndex(index)} />
+            <NavButton key={index} active={imgIndex === index ? true : false} onClick={() => setImgIndex(index)} />
           ))
         }
       </NavButtonWrap>
