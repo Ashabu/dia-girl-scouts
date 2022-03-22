@@ -1,1 +1,1 @@
-# dia-girl-scouts
+# Georgian Girl Scouts DIA - Official Web-page
