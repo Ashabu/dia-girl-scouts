@@ -9,15 +9,14 @@ const AppHeader = () => {
     )
 };
 
+export default AppHeader;
+
+
 const Header = styled.div`
     width: 100%;
-    height: 64px;
+    height: 70px;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #0f172a;
+    background-color: #132c66;
 `
-
-
-
-export default AppHeader;

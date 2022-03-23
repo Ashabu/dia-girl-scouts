@@ -52,7 +52,7 @@ const SliderWrap = styled.div`
     box-sizing: border-box;
 
     @media (min-width: 640px) {
-    margin: 4rem 2rem;
+    margin: 4.35rem 2rem;
     grid-template-rows:30rem;
   }
   
