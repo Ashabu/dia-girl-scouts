@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components'
 import { useWindowResize } from '../../hooks/useWindowResize';
 
-const InfoBox = ({index}: any) => {
+const InfoBox = ({index, item}: any) => {
   const { windowWidth, windowHeight } = useWindowResize();
 
   const bgColors = (index: number) => {
@@ -13,7 +13,7 @@ const InfoBox = ({index}: any) => {
         value = '#ffa500'
         break;
         case 1:
-        value = '#ffff00'
+        value = '#f00'
         break;
         case 2:
         value = '#008000'
@@ -36,8 +36,7 @@ const InfoBox = ({index}: any) => {
 
   return (
     <StyledLink index={index} hovercolor = {bgColors(index)}>
-      <p>{windowWidth}</p>
-      <p>{windowHeight}</p>
+      <BoxTitle>{item.title}</BoxTitle>
     </StyledLink>
 
   );
@@ -58,13 +57,20 @@ const appear = keyframes`
 `;
 
 
+const BoxTitle = styled.p`
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+ 
+`
 const StyledLink = styled.div<{index: number, hovercolor: string}>`
      width: 250px;
      height:170px;
      display: flex;
      justify-content: center;
      align-items: center;
-     background-color: antiquewhite;
+     background-color: #3848db;
      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
      transition: all 0.5s ease-in-out;
      animation-name: ${appear}; 
@@ -76,6 +82,8 @@ const StyledLink = styled.div<{index: number, hovercolor: string}>`
       transform: scale(1.1);
       background-color: ${({hovercolor}) => `${hovercolor}`};
      };
-`
+   
+`;
+
 
 

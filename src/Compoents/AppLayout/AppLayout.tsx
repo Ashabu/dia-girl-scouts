@@ -18,7 +18,6 @@ const AppLayout: React.FC = ({ children }) => {
 
 const LayoutBodyWrap = styled.div`
     width: 100%;
-    height: calc(100vh - 140px);
 `
 
 export default AppLayout

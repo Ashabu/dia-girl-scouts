@@ -1,21 +1,24 @@
 import React from 'react'
 import AppLayout from '../../Compoents/AppLayout/AppLayout'
-import AppHeader from '../../Compoents/Header/AppHeader'
 import ImageCarousel from '../../Compoents/ImageCarousel/ImageCarousel'
 import InfoBox from '../../Compoents/InfoBox/InfoBox'
 import SocialMediaBox from '../../Compoents/SocialMediaBox/SocialMediaBox'
+import { CompanyInfo } from '../../StaticData/PageSections'
 import SocialMedia from '../../StaticData/SocialMedia'
+import styled from 'styled-components';
 
 
 
 const HomePage = () => {
-  const INFOBOX = new Array(6).fill(6);
   return (
     <AppLayout>
+      <PageContainer>
+
+   
       <ImageCarousel />
-      <div style={{ display: 'flex', gap: 40, justifyContent: 'center' }}>
-        {INFOBOX.map((_, index) => (
-          <InfoBox key={index} index={index} />
+      <div style={{ display: 'flex', gap: 60, justifyContent: 'center' }}>
+        {CompanyInfo.map((item, index) => (
+          <InfoBox key={index} index={index} item={item}/>
         ))}
       </div>
       <div style={{ marginTop: 50, display: 'flex', gap: 40, justifyContent: 'center' }}>
@@ -23,10 +26,18 @@ const HomePage = () => {
           <SocialMediaBox key={index} item={media} />
         ))}
       </div>
+      </PageContainer>
     </AppLayout>
 
 
   )
 }
 
-export default HomePage
+export default HomePage;
+
+const PageContainer = styled.div`
+    padding: 1rem;
+    width: 100%;
+    height: 100vh;
+    
+`
